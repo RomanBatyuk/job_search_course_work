@@ -44,7 +44,7 @@ class work_with_json(WorkWithFile):
     """
 
     def __init__(self, filename="vacancies.json"):
-        self.__filename = filename  # приватный атрибут
+        self.__filename = filename
 
     def get_data(self) -> list[dict]:
         """Получение данных из файла"""

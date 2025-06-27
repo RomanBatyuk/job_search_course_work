@@ -21,12 +21,9 @@ class WorkVacancies:
         "alternate_url",
         "salary",
         "requirement",
-    )  # название вакансии, ссылка на вакансию, зарплата, требования
+    )
 
     def __init__(self, name, alternate_url, salary, requirement=""):
-        print(
-            f"Создается вакансия с requirement={requirement} (тип={type(requirement)})"
-        )
         self.name = name
         self.alternate_url = alternate_url
         self.salary = salary
@@ -42,7 +39,6 @@ class WorkVacancies:
 
         self._validate_name()
         self._validate_url()
-        # self._validate_requirement()
         self._validate_salary()
 
     def __eq__(self, other) -> bool:
@@ -68,16 +64,6 @@ class WorkVacancies:
             "http"
         ):
             raise ValueError("Некорректный url")
-
-    # def _validate_requirement(self):
-    #     """Метод валидации requirement"""
-    #     if not isinstance(self.requirement, str):
-    #         if self.requirement is None:
-    #             self.requirement = "требования не указаны"
-    #         else:
-    #             self.requirement = str(self.requirement)
-    #     else:
-    #         self.requirement = self.requirement
 
     def _validate_salary(self) -> int | str:
         """Метод валидации salary - выводит среднюю заработную плату"""

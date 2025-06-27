@@ -58,8 +58,6 @@ class hh_ru(HeadHunterAPI):
                 raise MyCustomError(
                     f"Ошибка! Запрос не выполнен. Статус: {response.status_code}"
                 )
-            print("Ответ сервера:", response.text)
-            # Проверка, что ответ не пустой
             if response.text:
                 try:
                     data = response.json()
